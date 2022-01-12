@@ -1,0 +1,40 @@
+.grid-container {
+    display: grid;
+}
+
+.header {
+    text-align: right;
+}
+
+.nav-bar a:active{
+    background-color: #C4E7EB; 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #8DCDD2;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #F1805F;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none; 
+    font-family: 'Abel';
+    font-size: 28px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #FFD281;
+}
+
+
