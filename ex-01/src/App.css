@@ -91,4 +91,53 @@ a:focus {
   border: 1px grey solid;
 }
 
+.main-section {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
+  width: 65%;
+  margin: auto;
+  margin-top: 10px;
+  gap: 10px;
+  height: 100vh;
+}
+
+.main-item {
+  background: tomato;
+  border: 3px solid rgba(0,0,0,.2);
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.main-item.one {
+  font-size: 12px;
+  text-align: left;
+  max-width: 60%;
+
+}
+
+.main-item:nth-of-type(1) {
+  flex-grow: 5;
+}
+
+.main-item:nth-of-type(2) {
+  flex-grow: 2;
+}
+
+.ordered-list {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  box-sizing: border-box;
+  max-width: 700px;
+}
+
+
 
