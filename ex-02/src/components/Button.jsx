@@ -1,9 +1,10 @@
 import React from "react";
 
-function Button() {
+function Button({ children, message = "", onHandleClick = () => {} }) {
+  // children and message props are for demonstrating and exercise
   return (
     <div>
-      <button type="submit">Add Milk</button>
+      <button onClick={onHandleClick}>{message ? message : children}</button>
     </div>
   );
 }
