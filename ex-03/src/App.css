@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  background-color: blanchedalmond;
+  height: 100vh;
+}
+
+.product-item {
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+
+.product-item img {
+  border: 2px solid black;
+  width: 100%;
+  margin-bottom: 10px;
+}
