@@ -2,10 +2,10 @@ import React from "react";
 
 function Item({ name, image, price }) {
   return (
-    <div className="item-container">
-      <h2>{name}Tuotteen nimi</h2>
+    <div className="product-item">
+      <h2>{name}</h2>
       <img src={image} alt="product-name" />
-      <h3>Hinta {price} </h3>
+      <h3>{price} </h3>
     </div>
   );
 }
