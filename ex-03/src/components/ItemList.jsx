@@ -4,11 +4,10 @@ import Item from "./Item";
 
 function ItemList() {
   return (
-    <div>
+    <div className="items-container">
       {ProductsData.map((p) => (
         <Item name={p.name} image={p.image} price={p.price} key={p.uuid} />
       ))}
-      ;
     </div>
   );
 }

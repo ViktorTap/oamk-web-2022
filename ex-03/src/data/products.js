@@ -2,6 +2,11 @@ import computer from "../products/computer.JPG";
 import hardDrive from "../products/hard-drive.JPG";
 import monitor from "../products/monitor.JPG";
 import office from "../products/office.JPG";
+import printer from "../products/printer.JPG";
+import router from "../products/router.JPG";
+import scanner from "../products/scanner.JPG";
+import stand from "../products/stand.JPG";
+import streaming from "../products/streaming.JPG";
 
 const ProductsData = [
   {
@@ -26,18 +31,27 @@ const ProductsData = [
   },
   {
     name: "Printer",
+    image: printer,
     price: 175,
   },
   {
-    name: "Scanner",
+    name: "Router",
+    image: router,
     price: 125,
   },
   {
+    name: "Scanner",
+    image: scanner,
+    price: 225,
+  },
+  {
     name: "Laptop Stand",
+    image: stand,
     price: 50,
   },
   {
     name: "Streaming Device",
+    image: streaming,
     price: 75,
   },
 ];

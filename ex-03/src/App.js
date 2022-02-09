@@ -1,12 +1,12 @@
 import "./App.css";
 import ItemList from "./components/ItemList";
-import ProductsData from "./data/products";
-import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <div className="product-item">
+      <Navbar />
+      <div className="main-container">
         <ItemList />
       </div>
     </div>

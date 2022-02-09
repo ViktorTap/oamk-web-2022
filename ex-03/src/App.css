@@ -1,19 +1,63 @@
-.App {
-  display: flex;
-  flex-flow: row wrap;
-  background-color: blanchedalmond;
-  height: 100vh;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: blanchedalmond;
+}
+
+button {
+  width: 60px;
+  margin-top: 15px;
+  background-color: aquamarine;
+  border-radius: 15px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.items-container {
+  /* display: flex;
+  width: 55%;
+  height: 100vh;
+  flex-wrap: wrap;
+  place-content: center space-around; */
+  /* border: 2px solid blue; */
+  /* flex-flow: row wrap; */
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+@media (max-width: 1020px) {
+  .items-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 680px) {
+  .items-container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
 .product-item {
   border: 2px solid black;
   width: 300px;
-  height: 350px;
-  text-align: center;
+  padding: 30px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-item img {
   border: 2px solid black;
-  width: 75%;
-  margin-bottom: 10px;
+  width: 100%;
+  margin: 10px;
 }
