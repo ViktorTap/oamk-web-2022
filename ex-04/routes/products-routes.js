@@ -67,4 +67,80 @@ router.delete("/products/:productId", (req, res) => {
   }
 });
 
+router.get("/products/category/:category", (req, res) => {
+  let categoryParam = req.params.category;
+
+  let foundIndex = products.findIndex(
+    (product) => product.category === req.params.category
+  );
+
+  console.log(categoryParam);
+
+  let productsByCategory = [];
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i]["category"] == categoryParam) {
+      productsByCategory.push(products[i]);
+      // console.log(products[i]);
+    }
+    // else {
+    //   console.log("BIP", products[i]["category"]);
+    // }
+  }
+
+  if (foundIndex === -1) {
+    res.sendStatus(404);
+  } else {
+    res.json(productsByCategory);
+  }
+});
+
+router.get("/products/name/:name", (req, res) => {
+  let nameParam = req.params.name;
+
+  let foundIndex = products.findIndex(
+    (product) => product.name === req.params.name
+  );
+
+  console.log(nameParam);
+
+  let productsByName = [];
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i]["name"] == nameParam) {
+      productsByName.push(products[i]);
+    }
+  }
+
+  if (foundIndex === -1) {
+    res.sendStatus(404);
+  } else {
+    res.json(productsByName);
+  }
+});
+
+router.get("/products/manufacturer/:manufacturer", (req, res) => {
+  let manufacturerParam = req.params.manufacturer;
+
+  let foundIndex = products.findIndex(
+    (product) => product.manufacturer === req.params.manufacturer
+  );
+
+  console.log(manufacturerParam);
+
+  let productsByManufacturer = [];
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i]["name"] == manufacturerParam) {
+      productsByManufacturer.push(products[i]);
+    }
+  }
+
+  if (foundIndex === -1) {
+    res.sendStatus(404);
+  } else {
+    res.json(productsByManufacturer);
+  }
+});
+
 module.exports = router;

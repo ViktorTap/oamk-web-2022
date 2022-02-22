@@ -21,6 +21,12 @@ app.use("/:productId", products); // PUT tuote id:llä
 
 app.use("/:productId", products); // DELETE tuote id:llä
 
+app.use("/category/:category", products); // SEARCH BY CATEGORY
+
+app.use("/name/:name", products); // SEARCH BY NAME
+
+app.use("/manufacturer/:manufacturer", products); // SEARCH BY MANUFACTURER
+
 // PRODUCTS ENDS
 // USERS STARTS
 
