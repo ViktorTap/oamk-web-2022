@@ -98,16 +98,20 @@ router.get("/products/category/:category", (req, res) => {
 router.get("/products/name/:name", (req, res) => {
   let nameParam = req.params.name;
 
-  let foundIndex = products.findIndex(
-    (product) => product.name === req.params.name
-  );
+  let nameParamLower = nameParam.toLowerCase();
 
-  console.log(nameParam);
+  let lowerCProducts = products.map((element) => {
+    return element.name.toLowerCase();
+  });
+
+  let foundIndex = lowerCProducts.findIndex((product) =>
+    product.includes(nameParamLower)
+  );
 
   let productsByName = [];
 
-  for (let i = 0; i < products.length; i++) {
-    if (products[i]["name"] == nameParam) {
+  for (let i = 0; i < lowerCProducts.length; i++) {
+    if (lowerCProducts[i].includes(nameParamLower)) {
       productsByName.push(products[i]);
     }
   }
