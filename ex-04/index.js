@@ -4,6 +4,7 @@ const port = 3000;
 const products = require("./routes/products-routes");
 const users = require("./routes/users-routes");
 const bodyParser = require("body-parser");
+const invoices = require("./routes/invoices-routes");
 
 app.use(bodyParser.json());
 
@@ -33,6 +34,11 @@ app.use("/manufacturer/:manufacturer", products); // SEARCH BY MANUFACTURER
 app.use("/", users); // GET all users
 
 // USERS ENDS
+// INVOICES STARTS
+
+app.use("/", invoices); // GET all invoices
+
+// INVOICES ENDS
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
