@@ -70,22 +70,26 @@ router.delete("/products/:productId", (req, res) => {
 router.get("/products/category/:category", (req, res) => {
   let categoryParam = req.params.category;
 
-  let foundIndex = products.findIndex(
-    (product) => product.category === req.params.category
-  );
-
   console.log(categoryParam);
+
+  let categoryParamLower = categoryParam.toLowerCase();
+
+  console.log(categoryParamLower);
+
+  let lowerCProducts = products.map((element) => {
+    return element.category.toLowerCase();
+  });
+
+  let foundIndex = lowerCProducts.findIndex((product) =>
+    product.includes(categoryParamLower)
+  );
 
   let productsByCategory = [];
 
-  for (let i = 0; i < products.length; i++) {
-    if (products[i]["category"] == categoryParam) {
+  for (let i = 0; i < lowerCProducts.length; i++) {
+    if (lowerCProducts[i].includes(categoryParamLower)) {
       productsByCategory.push(products[i]);
-      // console.log(products[i]);
     }
-    // else {
-    //   console.log("BIP", products[i]["category"]);
-    // }
   }
 
   if (foundIndex === -1) {
@@ -126,24 +130,28 @@ router.get("/products/name/:name", (req, res) => {
 router.get("/products/manufacturer/:manufacturer", (req, res) => {
   let manufacturerParam = req.params.manufacturer;
 
-  let foundIndex = products.findIndex(
-    (product) => product.manufacturer === req.params.manufacturer
+  let manuLower = manufacturerParam.toLowerCase();
+
+  let lowerCProducts = products.map((element) => {
+    return element.manufacturer.toLowerCase();
+  });
+
+  let foundIndex = lowerCProducts.findIndex((product) =>
+    product.includes(manuLower)
   );
 
-  console.log(manufacturerParam);
+  let productsByManu = [];
 
-  let productsByManufacturer = [];
-
-  for (let i = 0; i < products.length; i++) {
-    if (products[i]["name"] == manufacturerParam) {
-      productsByManufacturer.push(products[i]);
+  for (let i = 0; i < lowerCProducts.length; i++) {
+    if (lowerCProducts[i].includes(manuLower)) {
+      productsByManu.push(products[i]);
     }
   }
 
   if (foundIndex === -1) {
     res.sendStatus(404);
   } else {
-    res.json(productsByManufacturer);
+    res.json(productsByManu);
   }
 });
 
