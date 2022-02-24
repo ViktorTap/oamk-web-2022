@@ -38,6 +38,8 @@ app.use("/", users); // GET all users
 
 app.use("/", invoices); // GET all invoices
 
+app.use("/:userID", invoices); // GETT ALL by userID
+
 // INVOICES ENDS
 
 app.listen(port, () => {
