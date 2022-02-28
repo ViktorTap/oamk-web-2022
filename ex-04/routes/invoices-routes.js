@@ -62,4 +62,17 @@ router.get("/invoices/:userId", (req, res) => {
   }
 });
 
+router.delete("invoices/:invoiceId", (req, res) => {
+  let foundIndex = invoices.findIndex(
+    (invoice) => invoice.id === req.params.invoiceId
+  );
+
+  if (foundIndex === -1) {
+    res.sendStatus(404);
+  } else {
+    invoices.splice(invoices[(foundIndex, 1)]);
+    res.sendStatus(202);
+  }
+});
+
 module.exports = router;
